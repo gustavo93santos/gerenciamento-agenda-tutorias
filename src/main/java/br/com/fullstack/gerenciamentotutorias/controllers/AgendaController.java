@@ -53,4 +53,14 @@ public class AgendaController {
         return ResponseEntity.status(HttpStatus.OK).body(service.readByTutorId(id));
     }
 
+    @GetMapping("aluno-id/{id}/agendas-futuras")
+    public ResponseEntity<List<AgendaEntity>> readByAlunoIdAgendamentosFuturos(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.readByAlunoIdAgendamentosFuturos(id));
+    }
+
+    @GetMapping("tutor-id/{id}/agendas-futuras")
+    public ResponseEntity<List<AgendaEntity>> readByTutorAgendamentosFuturos(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.readByTutorAgendamentosFuturos(id));
+    }
+
 }

@@ -8,6 +8,7 @@ import br.com.fullstack.gerenciamentotutorias.repositories.AgendaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -55,6 +56,14 @@ public class AgendaService {
 
     public List<AgendaEntity> readByTutorId(Long id) {
         return repository.findByTutorId(id);
+    }
+
+    public List<AgendaEntity> readByAlunoIdAgendamentosFuturos(Long id) {
+        return repository.findByAlunoIdAgendamentosFuturos(id, new Date());
+    }
+
+    public List<AgendaEntity> readByTutorAgendamentosFuturos(Long id) {
+        return repository.findByTutorIdAgendamentosFuturos(id, new Date());
     }
 
 }
