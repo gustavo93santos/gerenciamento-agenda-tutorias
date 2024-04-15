@@ -17,7 +17,7 @@ public class MaterialEntity {
     private AgendaEntity agenda;
 
     @Column(nullable = false)
-    private String descriccao;
+    private String descricao;
 
     @Column(nullable = false)
     private String pathArquivo;
