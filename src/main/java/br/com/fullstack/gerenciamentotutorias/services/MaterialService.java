@@ -3,7 +3,6 @@ package br.com.fullstack.gerenciamentotutorias.services;
 import br.com.fullstack.gerenciamentotutorias.entities.MaterialEntity;
 import br.com.fullstack.gerenciamentotutorias.exceptions.NotFountException;
 import br.com.fullstack.gerenciamentotutorias.repositories.MaterialRepository;
-import br.com.fullstack.gerenciamentotutorias.repositories.TutorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

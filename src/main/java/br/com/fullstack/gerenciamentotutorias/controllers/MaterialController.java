@@ -2,7 +2,6 @@ package br.com.fullstack.gerenciamentotutorias.controllers;
 
 import br.com.fullstack.gerenciamentotutorias.entities.MaterialEntity;
 import br.com.fullstack.gerenciamentotutorias.services.MaterialService;
-import br.com.fullstack.gerenciamentotutorias.services.TutorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
