@@ -43,4 +43,14 @@ public class AgendaController {
         //return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("aluno-id/{id}")
+    public ResponseEntity<List<AgendaEntity>> readByAlunoId(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.readByAlunoId(id));
+    }
+
+    @GetMapping("tutor-id/{id}")
+    public ResponseEntity<List<AgendaEntity>> readByTutorId(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.readByTutorId(id));
+    }
+
 }

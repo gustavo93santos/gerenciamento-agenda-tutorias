@@ -49,4 +49,12 @@ public class AgendaService {
         repository.delete(aluno);
     }
 
+    public List<AgendaEntity> readByAlunoId(Long id) {
+        return repository.findByAlunoId(id);
+    }
+
+    public List<AgendaEntity> readByTutorId(Long id) {
+        return repository.findByTutorId(id);
+    }
+
 }
