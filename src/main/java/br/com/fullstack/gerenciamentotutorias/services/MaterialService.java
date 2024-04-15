@@ -1,5 +1,7 @@
 package br.com.fullstack.gerenciamentotutorias.services;
 
+import br.com.fullstack.gerenciamentotutorias.entities.AgendaEntity;
+import br.com.fullstack.gerenciamentotutorias.entities.AlunoEntity;
 import br.com.fullstack.gerenciamentotutorias.entities.MaterialEntity;
 import br.com.fullstack.gerenciamentotutorias.exceptions.NotFountException;
 import br.com.fullstack.gerenciamentotutorias.repositories.MaterialRepository;
@@ -13,8 +15,11 @@ import java.util.List;
 public class MaterialService {
 
     private final MaterialRepository repository;
+    private final AgendaService agendaService;
 
     public MaterialEntity create(MaterialEntity material){
+        AgendaEntity agenda = agendaService.readById(material.getAgenda().getId());
+        material.setAgenda(agenda);
         return repository.save(material);
     }
 

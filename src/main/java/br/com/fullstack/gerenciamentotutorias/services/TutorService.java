@@ -19,7 +19,7 @@ public class TutorService {
     }
 
     public TutorEntity readById(Long id){
-        return repository.findById(id).orElseThrow(() -> new NotFountException("Aluno não lozalizado"));
+        return repository.findById(id).orElseThrow(() -> new NotFountException("Tutor não lozalizado"));
     }
 
     public List<TutorEntity> readAll(){

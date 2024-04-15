@@ -1,6 +1,8 @@
 package br.com.fullstack.gerenciamentotutorias.services;
 
 import br.com.fullstack.gerenciamentotutorias.entities.AgendaEntity;
+import br.com.fullstack.gerenciamentotutorias.entities.AlunoEntity;
+import br.com.fullstack.gerenciamentotutorias.entities.TutorEntity;
 import br.com.fullstack.gerenciamentotutorias.exceptions.NotFountException;
 import br.com.fullstack.gerenciamentotutorias.repositories.AgendaRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +15,18 @@ import java.util.List;
 public class AgendaService {
 
     private final AgendaRepository repository;
+    private final AlunoService alunoService;
+    private final TutorService tutorService;
+
 
     public AgendaEntity create(AgendaEntity agenda){
+
+        AlunoEntity aluno = alunoService.readById(agenda.getAluno().getId());
+        agenda.setAluno(aluno);
+
+        TutorEntity tutor = tutorService.readById(agenda.getTutor().getId());
+        agenda.setTutor(tutor);
+
         return repository.save(agenda);
     }
 
